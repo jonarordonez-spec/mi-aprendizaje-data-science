@@ -1,107 +1,183 @@
 """
-Script de apoyo - Clase 3: Estructuras de Datos en Python
+Script de apoyo - Clase 3: Estructuras de Datos y Control en Python
 Autor: Jonathan Ruiz Ordoñez
-Fecha: [Fecha de tu clase 3]
-Descripción: Demostración de estructuras de datos aprendidas en la tercera clase
+Fecha: 29 de Octubre 2024
+Descripción: Demostración de conceptos aprendidos en la tercera clase de Data Science
 """
+
+def demostrar_variables_atomicas():
+    """Demuestra los tipos de datos atómicos en Python"""
+    print("=" * 50)
+    print("🔢 VARIABLES Y DATOS ATÓMICOS")
+    print("=" * 50)
+    
+    # Variables atómicas
+    entero = 15
+    flotante = 15.3
+    cadena = "texto"
+    booleano = True
+    
+    print(f"Entero: {entero} (tipo: {type(entero)})")
+    print(f"Flotante: {flotante} (tipo: {type(flotante)})")
+    print(f"Cadena: '{cadena}' (tipo: {type(cadena)})")
+    print(f"Booleano: {booleano} (tipo: {type(booleano)})")
+    
+    # Operaciones con variables
+    suma = entero + flotante
+    print(f"\nSuma de {entero} + {flotante} = {suma}")
+    
+    return entero, flotante, cadena, booleano
 
 def demostrar_listas():
     """Demuestra el uso de listas en Python"""
-    print("=" * 50)
+    print("\n" + "=" * 50)
     print("📋 LISTAS EN PYTHON")
     print("=" * 50)
     
-    # Crear una lista
-    frutas = ["manzana", "banana", "naranja", "uva"]
-    print(f"Lista original: {frutas}")
+    # Crear listas
+    nombres = ["Noemi", "Jonathan", "Melissa", "Edgar"]
+    numeros = [1, 2, 3, 4, 5, 6, 7]
+    combinada = ["hola", 12, [1, 2]]
     
-    # Operaciones comunes con listas
-    frutas.append("mango")  # Agregar elemento
-    frutas.insert(1, "fresa")  # Insertar en posición
-    frutas.remove("banana")  # Remover elemento
+    print(f"Lista de nombres: {nombres}")
+    print(f"Lista de números: {numeros}")
+    print(f"Lista combinada: {combinada}")
     
-    print(f"Lista modificada: {frutas}")
-    print(f"Primer elemento: {frutas[0]}")
-    print(f"Último elemento: {frutas[-1]}")
-    print(f"Longitud de la lista: {len(frutas)}")
+    # Operaciones con listas
+    numeros.append(8)  # Agregar al final
+    numeros.insert(0, 0)  # Insertar en posición
+    numeros.remove(3)  # Remover elemento
     
-    return frutas
+    print(f"\nLista modificada: {numeros}")
+    print(f"Primer elemento: {nombres[0]}")
+    print(f"Último elemento: {nombres[-1]}")
+    print(f"Longitud de la lista: {len(nombres)}")
+    
+    return nombres, numeros, combinada
+
+def demostrar_condicionales():
+    """Demuestra estructuras condicionales if-elif-else"""
+    print("\n" + "=" * 50)
+    print("🎯 ESTRUCTURAS CONDICIONALES")
+    print("=" * 50)
+    
+    edad = 18
+    
+    # Condicional básico
+    if edad >= 18:
+        print("✅ Eres mayor de edad")
+        años_21 = 21 - edad
+        print(f"Te faltan {años_21} años para cumplir 21 años")
+    else:
+        print("❌ Eres menor de edad")
+        años_21 = 21 - edad
+        print(f"Te faltan {años_21} años para cumplir 21 años")
+    
+    # Condicional con input (simulado)
+    print("\n--- Ejemplo con Input ---")
+    edad_usuario = 20  # Simulando input
+    if edad_usuario >= 18:
+        print("✅ Puedes aprender ciencia de datos sin permiso de tus papás")
+    else:
+        print("🎉 Que chido que empieces joven")
+    
+    return edad
+
+def demostrar_bucles():
+    """Demuestra bucles for y while"""
+    print("\n" + "=" * 50)
+    print("🔄 ESTRUCTURAS DE REPETICIÓN")
+    print("=" * 50)
+    
+    # Bucle for
+    print("--- Bucle FOR ---")
+    lenguajes = ["Python", "R", "SQL", "Julia", "Scala"]
+    for lenguaje in lenguajes:
+        print(f"💻 Uno de los lenguajes más usados es: {lenguaje}")
+    
+    # Bucle while
+    print("\n--- Bucle WHILE ---")
+    dias_estudio = 0
+    while dias_estudio < 3:
+        print(f"📚 Estudia un poco más, Día {dias_estudio + 1}")
+        dias_estudio += 1
+    print("🎊 Bien hecho, has estudiado al menos 3 días esta semana")
+    
+    return lenguajes
 
 def demostrar_diccionarios():
-    """Demuestra el uso de diccionarios en Python"""
+    """Demuestra el uso de diccionarios"""
     print("\n" + "=" * 50)
     print("📖 DICCIONARIOS EN PYTHON")
     print("=" * 50)
     
-    # Crear un diccionario de estudiante
-    estudiante = {
-        "nombre": "Jonathan Ruiz",
-        "edad": 25,
-        "curso": "Data Science",
-        "habilidades": ["Python", "Pandas", "SQL"],
-        "proyectos_completados": 3
+    # Crear diccionario
+    mi_dict = {
+        "nombre": "Python", 
+        "version": 3.12, 
+        "activo": True,
+        "año": 2024
     }
     
-    print(f"Diccionario del estudiante: {estudiante}")
-    print(f"Nombre: {estudiante['nombre']}")
-    print(f"Habilidades: {', '.join(estudiante['habilidades'])}")
+    print(f"Diccionario completo: {mi_dict}")
+    print(f"Nombre del lenguaje: {mi_dict['nombre']}")
+    print(f"Versión: {mi_dict['version']}")
     
-    # Agregar nueva clave
-    estudiante["nuevo_proyecto"] = "Análisis de datos"
-    print(f"Proyecto agregado: {estudiante['nuevo_proyecto']}")
+    # Recorrer diccionario
+    print("\n--- Recorriendo diccionario ---")
+    for clave, valor in mi_dict.items():
+        print(f"🔑 {clave}: {valor}")
     
-    return estudiante
+    return mi_dict
 
-def demostrar_tuplas():
-    """Demuestra el uso de tuplas en Python"""
+def demostrar_funciones():
+    """Demuestra la creación y uso de funciones"""
     print("\n" + "=" * 50)
-    print("📦 TUPLAS EN PYTHON")
+    print("⚙️ FUNCIONES EN PYTHON")
     print("=" * 50)
     
-    # Crear una tupla (inmutable)
-    coordenadas = (40.7128, -74.0060)
-    colores_rgb = (255, 128, 0)
+    # Función simple
+    def saludar():
+        print("👋 Hola, bienvenida al mundo de la ciencia de datos")
     
-    print(f"Coordenadas NYC: {coordenadas}")
-    print(f"Color RGB naranja: {colores_rgb}")
-    print(f"Latitud: {coordenadas[0]}")
-    print(f"Longitud: {coordenadas[1]}")
+    # Función con parámetros
+    def saludar_persona(nombre):
+        print(f"🎉 Hola {nombre}, bienvenido al curso")
     
-    return coordenadas, colores_rgb
-
-def operaciones_avanzadas():
-    """Demuestra operaciones avanzadas con estructuras de datos"""
-    print("\n" + "=" * 50)
-    print("🚀 OPERACIONES AVANZADAS")
-    print("=" * 50)
+    # Función con return
+    def sumar(a, b):
+        resultado = a + b
+        return resultado
     
-    # Comprensión de listas
-    numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    cuadrados_pares = [x**2 for x in numeros if x % 2 == 0]
+    # Ejecutar funciones
+    saludar()
+    saludar_persona("Jonathan")
+    resultado_suma = sumar(10, 5)
+    print(f"➗ Resultado de la suma: {resultado_suma}")
     
-    print(f"Números originales: {numeros}")
-    print(f"Cuadrados de números pares: {cuadrados_pares}")
-    
-    # Diccionario con comprensión
-    cubos = {x: x**3 for x in range(1, 6)}
-    print(f"Cubos del 1 al 5: {cubos}")
-    
-    return cuadrados_pares, cubos
+    return saludar, saludar_persona, sumar
 
 if __name__ == "__main__":
-    print("🚀 INICIANDO CLASE 3 - ESTRUCTURAS DE DATOS\n")
+    print("🚀 INICIANDO CLASE 3 - ESTRUCTURAS DE DATOS Y CONTROL\n")
     print("Autor: Jonathan Ruiz Ordoñez")
     print("=" * 60)
     
+    # Ejecutar todas las demostraciones
+    variables = demostrar_variables_atomicas()
     listas = demostrar_listas()
+    condicionales = demostrar_condicionales()
+    bucles = demostrar_bucles()
     diccionarios = demostrar_diccionarios()
-    tuplas = demostrar_tuplas()
-    avanzadas = operaciones_avanzadas()
+    funciones = demostrar_funciones()
     
     print("\n" + "=" * 50)
-    print("✅ DEMOSTRACIÓN COMPLETADA")
+    print("✅ CLASE 3 COMPLETADA EXITOSAMENTE")
     print("=" * 50)
-    print("Estructuras creadas exitosamente:")
-    print(f"- Lista: {len(listas)} elementos")
-    print(f"- Diccionario: {len(diccionarios)} claves")
-    print(f"- Tupla: {len(tuplas)} elementos")
+    print("🎯 Conceptos aprendidos:")
+    print("   • Variables y tipos de datos")
+    print("   • Listas y operaciones")
+    print("   • Estructuras condicionales")
+    print("   • Bucles for y while")
+    print("   • Diccionarios")
+    print("   • Funciones y parámetros")
+    print("\n📚 Revisa el notebook 'ejercicios-clase-3.ipynb' para más ejercicios")
