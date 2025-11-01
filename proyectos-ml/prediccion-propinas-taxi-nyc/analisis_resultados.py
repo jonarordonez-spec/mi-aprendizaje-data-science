@@ -11,20 +11,20 @@ import seaborn as sns
 from sklearn.metrics import mean_squared_error, r2_score
 
 def crear_visualizacion_completa():
-    """Crea una visualización única y profesional con todos los insights"""
     
-    # Configuración estética profesional
+    
+    # Configuración estética 
     plt.style.use('default')
     sns.set_palette("husl")
     fig = plt.figure(figsize=(16, 12))
     
-    # Grid specification para layout profesional
+    # Grid specification para layout 
     gs = fig.add_gridspec(3, 2, hspace=0.3, wspace=0.3)
     
     # ===== GRÁFICA 1: PREDICCIONES VS REALES (PRINCIPAL) =====
     ax1 = fig.add_subplot(gs[0:2, :])  # Ocupa las 2 filas superiores
     
-    # Datos de ejemplo (simulados basados en tus resultados)
+    # Datos de ejemplo 
     np.random.seed(42)
     n_points = 500
     
